@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/App.css";
+import List from "./List";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [listData, setListData] = useState(null);
+
+  const dataUrl = "https://pokeapi.co/api/v2/pokemon/unown/";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = await fetch(dataUrl);
+      let responseBody = await response.json();
+      setListData(responseBody);
+    };
+
+    fetchData();
+  }, []);
+
+  const data = async () => {
+    let response = await fetch(dataUrl);
+    let responseBody = await response.json();
+    return responseBody;
+  };
 
   return (
     <>
@@ -28,6 +48,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      {listData && <List listData={listData} />}
     </>
   );
 }
