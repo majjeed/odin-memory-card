@@ -22,9 +22,10 @@ export default function Card({ formName, url, handleClick }) {
   return (
     <div className="card" onClick={handleItemClick}>
       {item && <p>{item.name}</p>}
-      <p>
+      {/* <p>
         Form Name: {formName} URL: {url}
-      </p>
+      </p> */}
+      {item && <img src={item.sprites.front_default} />}
     </div>
   );
 }

@@ -25,3 +25,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.card img {
+  object-fit: contain;
+}
