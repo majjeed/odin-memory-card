@@ -47,7 +47,7 @@ export default function List({ listData }) {
       <p>Current Score: {currentScore}</p>
       <p>Best Score: {bestScore}</p>
       {listOrder && (
-        <ul>
+        <ul className="cardContainer">
           {listOrder.map((element) => (
             <Card
               key={element.name}

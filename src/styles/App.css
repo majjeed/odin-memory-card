@@ -4,3 +4,24 @@
   padding: 2rem;
   text-align: center;
 }
+
+.card {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  max-width: 200px;
+  box-sizing: border-box; /* Include padding and border in width/height */
+  overflow: hidden; /* Hide overflow */
+  padding: 10px; /* Add padding */
+}
+
+.card p {
+  margin: 0; /* Remove margin from p */
+  word-wrap: break-word; /* Ensure long words wrap */
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

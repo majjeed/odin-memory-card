@@ -20,7 +20,7 @@ export default function Card({ formName, url, handleClick }) {
   };
 
   return (
-    <div onClick={handleItemClick}>
+    <div className="card" onClick={handleItemClick}>
       {item && <p>{item.name}</p>}
       <p>
         Form Name: {formName} URL: {url}
