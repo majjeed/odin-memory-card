@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Card({ formName, url }) {
+export default function Card({ formName, url, handleClick }) {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -13,12 +13,14 @@ export default function Card({ formName, url }) {
     fetchData();
   }, [url]);
 
-  const handleClick = () => {
-    console.log(item.name);
+  const handleItemClick = () => {
+    if (item) {
+      handleClick(item.name);
+    }
   };
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleItemClick}>
       {item && <p>{item.name}</p>}
       <p>
         Form Name: {formName} URL: {url}
